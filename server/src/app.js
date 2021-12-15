@@ -16,8 +16,8 @@ app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
-app.use(planetsRounters);
-app.use(launchesRounters);
+app.use('/planets', planetsRounters);
+app.use('/launches', launchesRounters);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
